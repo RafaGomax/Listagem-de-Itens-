@@ -15,3 +15,4 @@ create table item(
 
 insert into  item values(123123, 'Parafuso','Parafuso Sextavado 3/16', 1.50, 1000,'Parafusos - Aço');
 insert into  item values(321321, 'Porca','Porca 3/16', 0.50, 50,'Porcas - Aço');
+insert into  item values(258258, 'Arruela','Arruela 3/16', 0.25, 10,'Arruelas - Aço');

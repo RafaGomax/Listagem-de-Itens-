@@ -1,23 +1,25 @@
 <?php
-class Conexao //define a classe conexão 
+class Conexao //Cria a classe que tem toda a movimentação para conexão com o banco
 {
-    private $servidor = "127.0.0.1"; //variáveis que aramzenam dados para conexão ao banco
+    //Inicializa propriedades que contém configuraçãoes para a conexão ativa
+    private $servidor = "127.0.0.1"; 
     private $usuario = "root";
-    private $senha = "123456789";
+    private $senha = "";
     private $dbname = "estoque";
-    private $conn;
+    private $conn;//Armazena a conexão ativa 
 
-    public function getConexao() //função pública que inicializa a variável conn como nula
+    public function getConexao() //Método que inicializa a conexão 
     {
-        $this->conn = null;
+        $this->conn = null; //Atribui a conexão um valor nulo 
 
-        try { //tenta estabelecer a conexão ao banco 
-            $this->conn = new mysqli($this->servidor, $this->usuario, $this->senha, $this->dbname); //cria uma nova conexão mysqli com os detalhes do servidor, usuário, senha e nome do banco de dados
-        } catch (mysqli_sql_exception $exception) {
-            echo "Erro na conexão: " . $exception->getMessage();//se houver um erro na conexão é exibido na tela 
+        try { 
+            //Tenta estabelecer a conexão com o banco de dados 
+            $this->conn = new mysqli($this->servidor, $this->usuario, $this->senha, $this->dbname); //Extensão do Mysqli que fornece a instância para interação com o banco
+        } catch (mysqli_sql_exception $exception) { //Se houver algum erro ele retorna o erro (capitura excessões na conexão com o banco)
+            echo "Erro na conexão: " . $exception->getMessage();
         }
 
-        return $this->conn; //retorna as informações a conexão 
+        return $this->conn; //Retorna para a propriedade conn o resultado da conexão 
     }
 }
 ?>

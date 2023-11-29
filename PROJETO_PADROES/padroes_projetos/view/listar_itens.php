@@ -35,30 +35,31 @@
                 <th>Família</th>
             </tr>
 
-            <?php foreach ($itens as $item): ?>
+            <?php foreach ($itens as $item): ?> 
                 <tr>
                     <td>
-                        <?php echo ($item->id); ?>
+                        <?php echo $item->getId(); ?> 
                     </td>
                     <td>
-                        <?php echo ($item->nome); ?>
+                        <?php echo $item->getNome(); ?>
                     </td>
                     <td>
-                        <?php echo ($item->descricao); ?>
+                        <?php echo $item->getDescricao(); ?>
                     </td>
                     <td>
-                        <?php echo ($item->valor); ?>
+                        <?php echo $item->getValor(); ?>
                     </td>
                     <td>
-                        <?php echo ($item->quant_estoque); ?>
+                        <?php echo $item->getQuantEstoque(); ?>
                     </td>
                     <td>
-                        <?php echo ($item->familia); ?>
+                        <?php echo $item->getFamilia(); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
 
         </table>
+    </div>
 </body>
 
 </html>
